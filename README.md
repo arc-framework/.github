@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://path-to-your-logo/social_preview.png" alt="A.R.C. Agentic Reasoning Core Banner" />
+  <img src="https://raw.githubusercontent.com/arc-framework/.github/main/assets/arc-icon.png" alt="A.R.C. Agentic Reasoning Core Banner" width="800" />
 </p>
 
 <p align="center">
