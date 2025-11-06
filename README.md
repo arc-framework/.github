@@ -41,6 +41,7 @@ A.R.C. is a polyglot platform managed by a single powerful CLI. We give you the 
 
 ### 🚀 Platform & Developer Experience
 * **Blazing-fast Go CLI:** A single binary (`arc`) to scaffold, run, and manage your entire platform. (`arc new`, `arc add`, `arc run`)
+* **Auto-discovery API Gateway:** A pre-configured **Traefik** instance acts as the "front door." It automatically discovers and routes new services (like Kratos or Unleash) via Docker labels, so your platform wires itself up.
 * **Polyglot Architecture:** Get the best of all worlds: a high-performance **Go** gateway and CLI, with a powerful **Python** ecosystem for AI.
 * **Documentation-as-Code:** Your platform's documentation is built with **Docusaurus**, versioned right alongside your code.
 
@@ -87,7 +88,7 @@ The A.R.C. developer experience is designed to get you from an idea to a running
     The entire, complex, multi-service platform—which would normally take weeks to configure—launches locally with a single `arc run` command.
 
 4.  **Focus on the "Thinking Engine"**
-    Your job as a developer is not to build infrastructure. The plumbing is done. Your only task is to open the Agentic Reasoning Core (`engine`) service and start writing your unique agent logic (using LangGraph).
+    Your job as a developer is to not build infrastructure. The plumbing is done. Your only task is to open the Agentic Reasoning Core (`engine`) service and start writing your unique agent logic (using LangGraph).
 
 You're not building *from* scratch. You're building *on top* of a production-ready foundation from day one.
 
