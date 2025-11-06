@@ -8,12 +8,6 @@
   An open-source, "Platform-in-a-Box" for building, deploying, and orchestrating production-ready AI agents.
 </p>
 
-<!-- <p align="center">
-  <a href="https://github.com/arc-framework/arc/blob/main/LICENSE"><img src="https://img.shields.io/github/license/arc-framework/arc?style=for-the-badge&color=blue" alt="License"></a>
-  <a href="https://github.com/arc-framework/arc/pulls"><img src="https://img.shields.io/github/issues-pr/arc-framework/arc?style=for-the-badge&color=brightgreen" alt="Pull Requests"></a>
-  <a href="https://github.com/arc-framework/arc/issues"><img src="https://img.shields.io/github/issues/arc-framework/arc?style=for-the-badge&color=orange" alt="Issues"></a>
-</p> -->
-
 ---
 
 ## 🧠 What is A.R.C.?
@@ -30,16 +24,52 @@ Use A.R.C. to build, deploy, and scale:
 * Custom AI workflows (RAG, agentic, etc.)
 * Modular, event-driven AI microservices
 
-## 🧩 Key Features
+---
+
+## ✨ Why A.R.C.?
+
+* **Truly Open-Source:** 100% of our core stack is **FOSS**. No BSL, source-available, or proprietary-core-with-non-compete-clauses. We're built on Apache 2.0, MIT, and MPL.
+* **Platform-in-a-Box:** We provide the "batteries-included" foundation. You get auth, secrets, messaging, and observability out of the box, not as an afterthought.
+* **Modular & Pluggable:** We're built on standards. We use **OpenFeature** for feature flags and **OpenTelemetry** for observability, so you're never locked into a single vendor (not even us).
+* **Built for Production:** Our stack isn't a toy. It's a collection of battle-tested, best-in-class open-source projects (like Kratos, Pulsar, and Infisical) orchestrated to work as one.
+
+---
+
+## 🧩 The A.R.C. Stack (Batteries Included)
 
 A.R.C. is a polyglot platform managed by a single powerful CLI. We give you the pre-built components to assemble your perfect stack.
 
-* 🚀 **Blazing-fast Go CLI:** A single binary (`arc`) to scaffold, run, and manage your entire platform. (`arc new`, `arc add`, `arc run`)
-* 📦 **Pluggable "Black-Box" Services:** Compose your platform from our fleet of pre-built Docker services, including a high-performance Go `gateway`.
-* 🧠 **Agentic Reasoning Engine:** A core Python service built on **LangGraph** for creating powerful, stateful, and persistent agents.
-* 🔐 **Built-in IAM & Auth:** Add production-ready user management, auth, and security to your platform in one command (`arc add security`), powered by Ory Kratos.
-* ⚡ **Real-time Stream Processing:** Ingest and process data continuously with an optional, pre-configured **Apache Pulsar** & **Apache Beam** pipeline.
-* 🌐 **Polyglot Architecture:** Get the best of all worlds: a high-performance **Go** gateway and CLI, with a powerful **Python** ecosystem for AI.
+### 🚀 Platform & Developer Experience
+* **Blazing-fast Go CLI:** A single binary (`arc`) to scaffold, run, and manage your entire platform. (`arc new`, `arc add`, `arc run`)
+* **Polyglot Architecture:** Get the best of all worlds: a high-performance **Go** gateway and CLI, with a powerful **Python** ecosystem for AI.
+* **Documentation-as-Code:** Your platform's documentation is built with **Docusaurus**, versioned right alongside your code.
+
+### 🧠 The AI Agent Core (The "Stephen" Stack)
+* **Agentic Reasoning Engine:** A core Python service built on **LangGraph** for creating powerful, stateful, and persistent agents.
+* **Agent Guardrails:** A Go-native **RuleGo** engine provides deterministic guardrails for your "fuzzy" LLM, ensuring predictable execution of agent actions.
+* **Agent Memory:** Persistent, long-term memory and RAG capabilities provided by **PostgreSQL** with the **`pgvector`** extension.
+* **Real-time Voice Interface:** A full, end-to-end streaming voice pipeline orchestrated by **`pipecat`**.
+* **Self-Hosted Voice Engine:** 100% open-source, self-hosted TTS engine powered by **Piper**, ensuring real-time performance and total privacy.
+
+### 🔐 Core Services (Security & Auth)
+* **Built-in IAM & Auth:** Add production-ready user management, auth, and security to your platform in one command (`arc add security`), powered by **Ory Kratos**.
+* **Secrets Management:** A self-hosted, open-source vault powered by **Infisical** to manage all platform secrets and API keys.
+* **Dynamic Config & Flags:** Manage runtime configuration and feature flags with **Unleash**, accessed via the **OpenFeature** SDK for total vendor-agnosticism.
+
+### ⚡ Core Services (Data & Messaging)
+* **Durable Streaming:** A pre-configured **Apache Pulsar** cluster for your "system-of-record" event log and streaming analytics (the "Conveyor Belt").
+* **Ephemeral Messaging:** A lightweight, high-performance **NATS** server for fire-and-forget messaging and job queues (the "Central Nervous System").
+* **Platform Cache:** A high-speed, in-memory **Redis** instance for shared caching, rate limiting, and session storage.
+
+### 📊 Core Services (Observability)
+* **Full-Stack Telemetry:** Your platform is born with "eyes." Get a pre-configured, end-to-end observability stack from day one.
+* **Collection:** **OpenTelemetry Collector** as the single "front door" for all telemetry.
+* **Logs:** **Loki** for log aggregation.
+* **Metrics:** **Prometheus** for metrics.
+* **Traces:** **Jaeger** for distributed tracing.
+* **Visualization:** **Grafana** as the single pane of glass.
+
+---
 
 ## 💡 How It Works (The "A.R.C. Way")
 
@@ -47,21 +77,21 @@ We've designed A.R.C. to have the power of a microservice architecture, with the
 
 The A.R.C. developer experience is designed to get you from an idea to a running, production-ready platform in minutes, not months. We're not just a library; we're a factory.
 
-1. Interactive Scaffolding
-It all starts with the arc CLI wizard. This tool guides you through a series of questions to understand what your platform needs—do you require user security? Real-time data streaming? Voice interaction?
+1.  **Interactive Scaffolding**
+    It all starts with the `arc` CLI wizard. This tool guides you through a series of questions to understand what your platform needs—do you require user security? Real-time data streaming? Voice interaction?
 
-2. Smart Composition
-Based on your answers, the A.R.C. framework acts as a "smart scaffolder." It dynamically generates a new, fully-configured project, composing our pre-built, "black-box" Docker services (like the API gateway and security engine) into a single, cohesive docker-compose.yml.
+2.  **Smart Composition**
+    Based on your answers, the A.R.C. framework acts as a "smart scaffolder." It dynamically generates a new, fully-configured project, composing our pre-built, "black-box" Docker services (like the API gateway and security engine) into a single, cohesive `docker-compose.yml`.
 
-3. One-Command Launch
-The entire, complex, multi-service platform—which would normally take weeks to configure—launches locally with a single arc run command.
+3.  **One-Command Launch**
+    The entire, complex, multi-service platform—which would normally take weeks to configure—launches locally with a single `arc run` command.
 
-4. Focus on the "Thinking Engine"
-Your job as a developer is not to build infrastructure. The plumbing is done. Your only task is to open the Agentic Reasoning Core (engine) service and start writing your unique agent logic (using LangGraph). 
+4.  **Focus on the "Thinking Engine"**
+    Your job as a developer is not to build infrastructure. The plumbing is done. Your only task is to open the Agentic Reasoning Core (`engine`) service and start writing your unique agent logic (using LangGraph).
 
 You're not building *from* scratch. You're building *on top* of a production-ready foundation from day one.
 
-
+---
 
 ## 🤝 Contributing
 
